@@ -81,13 +81,13 @@ func Encode(source []byte) string {
         res = append(res, e.alphabet[digits[q]])
     }
 
-    return strings.Join(res, " ")
+    return strings.Join(res, "-")
 }
 
 // Decode function decodes a string previously obtained from Encode, using the same alphabet and returns a byte slice
 // In case the input is not valid an error will be returned
 func Decode(source string) ([]byte, error) {
-    runes := strings.Split(source, " ")
+    runes := strings.Split(source, "-")
 
     if len(runes) == 0 {
         return []byte{}, nil
